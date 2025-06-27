@@ -16,11 +16,15 @@ export class UsersService {
         return this.userModel.find().exec();
     }
 
+    async findById(id: string): Promise<User | null> {
+        return this.userModel.findById(id).exec();
+    }
+
     async findByPhone(phone: string): Promise<User | null> {
         return this.userModel.findOne({ phone }).exec();
     }
 
-    async findById(id: string): Promise<User | null> {
-        return this.userModel.findById(id).exec();
+    async findByEmail(email: string): Promise<User | null> {
+        return this.userModel.findOne({ email }).exec();
     }
 }
