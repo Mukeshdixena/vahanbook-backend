@@ -1,3 +1,9 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
 // prisma/schema.prisma
 generator client {
   provider = "prisma-client-js"
@@ -9,14 +15,14 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
+  id        String    @id @default(uuid())
   name      String
-  phone     String   @unique
-  email     String?  @unique
+  phone     String    @unique
+  email     String?   @unique
   password  String
-  role      String   @default("customer") // customer or owner
+  role      String    @default("customer") // customer or owner
   vehicles  Vehicle[]
-  createdAt DateTime @default(now())
+  createdAt DateTime  @default(now())
 }
 
 model Vehicle {
