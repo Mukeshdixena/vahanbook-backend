@@ -14,6 +14,7 @@ const prisma_module_1 = require("./prisma/prisma.module");
 const jwt_1 = require("@nestjs/jwt");
 const vehicle_module_1 = require("./vehicle/vehicle.module");
 const config_1 = require("@nestjs/config");
+const booking_module_1 = require("./booking/booking.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -31,6 +32,7 @@ exports.AppModule = AppModule = __decorate([
                 signOptions: { expiresIn: '1d' },
             }),
             vehicle_module_1.VehicleModule,
+            booking_module_1.BookingModule,
         ],
     })
 ], AppModule);

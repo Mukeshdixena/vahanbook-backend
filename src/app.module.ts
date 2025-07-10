@@ -6,6 +6,7 @@ import { PrismaModule } from './prisma/prisma.module';
 import { JwtModule } from '@nestjs/jwt';
 import { VehicleModule } from './vehicle/vehicle.module';
 import { ConfigModule } from '@nestjs/config';
+import { BookingModule } from './booking/booking.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { ConfigModule } from '@nestjs/config';
       signOptions: { expiresIn: '1d' },
     }),
     VehicleModule,
+    BookingModule,
   ],
 })
 export class AppModule { }
